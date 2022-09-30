@@ -3,7 +3,10 @@ This repository contains the models and the results  produced for the paper "Bot
 
 THE REPOSITORY STRUCTURE IS THE FOLLOWING
 
+```
 UNSUPERVISED/  ;;unsupervised models tested  in Weka format (.model)
+   |
+   ├─RESULTS/ ;; unsupervised models results
    |
 WHITEBOX/      ;;supervised white box models tested in Weka format (.model)
    |
@@ -21,6 +24,7 @@ BLACKBOX/     ;;supervised white box models  tested in Weka format (.model)
         |
         ├─EXTERNAL_DATASET/          ;;models results with the external dataset from 3rd wave
         |
+```
 
 
 
