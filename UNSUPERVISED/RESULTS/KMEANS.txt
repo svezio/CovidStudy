@@ -1,0 +1,143 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 2 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     Datiok_20210617-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.Remove-R44
+Instances:    824
+Attributes:   44
+              age
+              sex
+              syn_adm_fever
+              syn_adm_chills
+              syn_adm_hackingcough
+              syn_adm_phlegmcough
+              syn_adm_conjunctivitis
+              syn_adm_rhinorrhoea
+              syn_adm_headache
+              syn_adm_musclepain
+              syn_adm_tiredness
+              syn_adm_nausea
+              syn_adm_vomiting
+              syn_adm_diarrhea
+              syn_adm_dyspnoea
+              syn_adm_haemoptysis
+              syn_adm_haematemesis
+              syn_adm_ageusia
+              syn_adm_anosmia
+              syn_adm_abdominalpain
+              syn_adm_thoracicpain
+              syn_adm_pharingalpain
+              copat_none
+              copat_COPD
+              copat_diabetes
+              copat_highbloodpressure
+              copat_coronarydisease
+              copat_cerebrovasculardisease
+              copat_hepatitisB
+              copat_activecancerlast5years
+              copat_chronickidneyfailure
+              copat_immunodeficiency
+              copat_ischemicheartdisease
+              copat_stroke
+              copat_dementia
+              copat_chronicepaticdisease
+              copat_hiv
+              copat_atrialfibrillation
+              copat_deepveinthrombosis
+              copat_pulmonaryembolism
+              copat_obesity
+              copat_dyslipidaemia
+              charlsoncomorbidityindex
+Ignored:
+              dischargetype
+Test mode:    Classes to clusters evaluation on training data
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 4
+Within cluster sum of squared errors: 2602.6777070514418
+
+Initial starting points (random):
+
+Cluster 0: 79,male,Yes,No,No,No,No,No,No,No,No,No,No,No,Yes,No,No,No,No,No,No,No,No,No,No,Yes,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,3
+Cluster 1: 49,female,Yes,Yes,No,No,No,No,No,Yes,No,No,No,No,No,No,No,No,No,No,No,No,Yes,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,0
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                            Cluster#
+Attribute                       Full Data          0          1
+                                  (824.0)    (465.0)    (359.0)
+===============================================================
+age                               68.4248    74.1935    60.9526
+sex                                  male       male     female
+syn_adm_fever                         Yes        Yes         No
+syn_adm_chills                         No         No         No
+syn_adm_hackingcough                   No         No         No
+syn_adm_phlegmcough                    No         No         No
+syn_adm_conjunctivitis                 No         No         No
+syn_adm_rhinorrhoea                    No         No         No
+syn_adm_headache                       No         No         No
+syn_adm_musclepain                     No         No         No
+syn_adm_tiredness                      No         No         No
+syn_adm_nausea                         No         No         No
+syn_adm_vomiting                       No         No         No
+syn_adm_diarrhea                       No         No         No
+syn_adm_dyspnoea                       No        Yes         No
+syn_adm_haemoptysis                    No         No         No
+syn_adm_haematemesis                   No         No         No
+syn_adm_ageusia                        No         No         No
+syn_adm_anosmia                        No         No         No
+syn_adm_abdominalpain                  No         No         No
+syn_adm_thoracicpain                   No         No         No
+syn_adm_pharingalpain                  No         No         No
+copat_none                             No         No         No
+copat_COPD                             No         No         No
+copat_diabetes                         No         No         No
+copat_highbloodpressure                No        Yes         No
+copat_coronarydisease                  No         No         No
+copat_cerebrovasculardisease           No         No         No
+copat_hepatitisB                       No         No         No
+copat_activecancerlast5years           No         No         No
+copat_chronickidneyfailure             No         No         No
+copat_immunodeficiency                 No         No         No
+copat_ischemicheartdisease             No         No         No
+copat_stroke                           No         No         No
+copat_dementia                         No         No         No
+copat_chronicepaticdisease             No         No         No
+copat_hiv                              No         No         No
+copat_atrialfibrillation               No         No         No
+copat_deepveinthrombosis               No         No         No
+copat_pulmonaryembolism                No         No         No
+copat_obesity                          No         No         No
+copat_dyslipidaemia                    No         No         No
+charlsoncomorbidityindex             3.79     4.4043     2.9944
+
+
+
+
+Time taken to build model (full training data) : 0 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      465 ( 56%)
+1      359 ( 44%)
+
+
+Class attribute: dischargetype
+Classes to Clusters:
+
+   0   1  <-- assigned to cluster
+ 229  79 | death
+ 236 280 | discharge
+
+Cluster 0 <-- death
+Cluster 1 <-- discharge
+
+Incorrectly clustered instances :	315.0	 38.2282 %
+

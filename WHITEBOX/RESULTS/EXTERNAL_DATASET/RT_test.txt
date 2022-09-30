@@ -1,0 +1,723 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     Datiok_20210617-weka.filters.unsupervised.attribute.Remove-R3,45
+Instances:    824
+Attributes:   44
+              age
+              sex
+              syn_adm_fever
+              syn_adm_chills
+              syn_adm_hackingcough
+              syn_adm_phlegmcough
+              syn_adm_conjunctivitis
+              syn_adm_rhinorrhoea
+              syn_adm_headache
+              syn_adm_musclepain
+              syn_adm_tiredness
+              syn_adm_nausea
+              syn_adm_vomiting
+              syn_adm_diarrhea
+              syn_adm_dyspnoea
+              syn_adm_haemoptysis
+              syn_adm_haematemesis
+              syn_adm_ageusia
+              syn_adm_anosmia
+              syn_adm_abdominalpain
+              syn_adm_thoracicpain
+              syn_adm_pharingalpain
+              copat_none
+              copat_COPD
+              copat_diabetes
+              copat_highbloodpressure
+              copat_coronarydisease
+              copat_cerebrovasculardisease
+              copat_hepatitisB
+              copat_activecancerlast5years
+              copat_chronickidneyfailure
+              copat_immunodeficiency
+              copat_ischemicheartdisease
+              copat_stroke
+              copat_dementia
+              copat_chronicepaticdisease
+              copat_hiv
+              copat_atrialfibrillation
+              copat_deepveinthrombosis
+              copat_pulmonaryembolism
+              copat_obesity
+              copat_dyslipidaemia
+              charlsoncomorbidityindex
+              dischargetype
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+copat_highbloodpressure = Yes
+|   charlsoncomorbidityindex < 3.5
+|   |   syn_adm_vomiting = No
+|   |   |   age < 73
+|   |   |   |   copat_chronickidneyfailure = Yes
+|   |   |   |   |   age < 54.5 : death (1/0)
+|   |   |   |   |   age >= 54.5 : discharge (1/0)
+|   |   |   |   copat_chronickidneyfailure = No
+|   |   |   |   |   syn_adm_hackingcough = No : discharge (49/0)
+|   |   |   |   |   syn_adm_hackingcough = Yes
+|   |   |   |   |   |   sex = male : discharge (31/0)
+|   |   |   |   |   |   sex = female
+|   |   |   |   |   |   |   copat_diabetes = Yes
+|   |   |   |   |   |   |   |   syn_adm_fever = No : discharge (1/0)
+|   |   |   |   |   |   |   |   syn_adm_fever = Yes : death (1/0)
+|   |   |   |   |   |   |   copat_diabetes = No : discharge (11/0)
+|   |   |   age >= 73
+|   |   |   |   syn_adm_musclepain = No
+|   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   syn_adm_ageusia = No
+|   |   |   |   |   |   |   syn_adm_thoracicpain = No
+|   |   |   |   |   |   |   |   syn_adm_tiredness = No
+|   |   |   |   |   |   |   |   |   syn_adm_hackingcough = No
+|   |   |   |   |   |   |   |   |   |   syn_adm_rhinorrhoea = No
+|   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   age < 78.5 : discharge (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   age >= 78.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_rhinorrhoea = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   syn_adm_hackingcough = Yes
+|   |   |   |   |   |   |   |   |   |   syn_adm_fever = No
+|   |   |   |   |   |   |   |   |   |   |   age < 77.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   age >= 77.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   |   |   sex = male : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   sex = female : discharge (1/0)
+|   |   |   |   |   |   |   |   syn_adm_tiredness = Yes
+|   |   |   |   |   |   |   |   |   syn_adm_fever = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   syn_adm_fever = Yes : death (1/0)
+|   |   |   |   |   |   |   syn_adm_thoracicpain = Yes : discharge (1/0)
+|   |   |   |   |   |   syn_adm_ageusia = Yes : death (1/0)
+|   |   |   |   |   copat_dyslipidaemia = Yes : death (1/0)
+|   |   |   |   syn_adm_musclepain = Yes : discharge (1/0)
+|   |   syn_adm_vomiting = Yes : discharge (5/0)
+|   charlsoncomorbidityindex >= 3.5
+|   |   sex = male
+|   |   |   copat_dementia = No
+|   |   |   |   copat_COPD = Yes
+|   |   |   |   |   copat_stroke = Yes : death (6/0)
+|   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   charlsoncomorbidityindex < 6.5
+|   |   |   |   |   |   |   syn_adm_fever = No
+|   |   |   |   |   |   |   |   copat_diabetes = Yes
+|   |   |   |   |   |   |   |   |   age < 79 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   age >= 79 : death (1/0)
+|   |   |   |   |   |   |   |   copat_diabetes = No : discharge (2/0)
+|   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   |   copat_activecancerlast5years = No
+|   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes
+|   |   |   |   |   |   |   |   |   |   |   age < 79.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   age >= 79.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No : death (6/0)
+|   |   |   |   |   |   |   |   |   copat_activecancerlast5years = Yes : death (1/0)
+|   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : discharge (1/0)
+|   |   |   |   |   |   charlsoncomorbidityindex >= 6.5 : death (10/0)
+|   |   |   |   copat_COPD = No
+|   |   |   |   |   charlsoncomorbidityindex < 4.5
+|   |   |   |   |   |   syn_adm_thoracicpain = No
+|   |   |   |   |   |   |   syn_adm_abdominalpain = No
+|   |   |   |   |   |   |   |   copat_chronicepaticdisease = No
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes
+|   |   |   |   |   |   |   |   |   |   syn_adm_anosmia = No
+|   |   |   |   |   |   |   |   |   |   |   copat_activecancerlast5years = No
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_diarrhea = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 82 : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 82 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_chronickidneyfailure = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 77 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 77 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_chronickidneyfailure = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_hackingcough = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_diabetes = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_diabetes = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 87 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 87 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_hackingcough = Yes : death (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_diarrhea = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_activecancerlast5years = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   copat_coronarydisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   copat_coronarydisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   age < 61.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age >= 61.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_anosmia = Yes : discharge (2/0)
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   age < 75.5 : discharge (7/0)
+|   |   |   |   |   |   |   |   |   |   age >= 75.5
+|   |   |   |   |   |   |   |   |   |   |   copat_coronarydisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_coronarydisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_musclepain = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 81.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 81.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_hackingcough = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_hackingcough = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_anosmia = No : death (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_anosmia = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 85.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 85.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_musclepain = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   copat_chronicepaticdisease = Yes : death (1/0)
+|   |   |   |   |   |   |   syn_adm_abdominalpain = Yes : death (1/0)
+|   |   |   |   |   |   syn_adm_thoracicpain = Yes : death (1/0)
+|   |   |   |   |   charlsoncomorbidityindex >= 4.5
+|   |   |   |   |   |   copat_chronickidneyfailure = Yes
+|   |   |   |   |   |   |   copat_diabetes = Yes
+|   |   |   |   |   |   |   |   copat_coronarydisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   copat_coronarydisease = No
+|   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = Yes : death (2/0)
+|   |   |   |   |   |   |   copat_diabetes = No
+|   |   |   |   |   |   |   |   copat_stroke = Yes : death (1/0)
+|   |   |   |   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   |   |   |   copat_obesity = No
+|   |   |   |   |   |   |   |   |   |   syn_adm_pharingalpain = No
+|   |   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 8.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 6.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 5.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 5.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 6.5 : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 8.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_pharingalpain = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   copat_obesity = Yes : discharge (1/0)
+|   |   |   |   |   |   copat_chronickidneyfailure = No
+|   |   |   |   |   |   |   syn_adm_hackingcough = No
+|   |   |   |   |   |   |   |   copat_stroke = Yes : death (8/0)
+|   |   |   |   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   |   |   |   syn_adm_ageusia = No
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_diarrhea = No
+|   |   |   |   |   |   |   |   |   |   |   |   copat_coronarydisease = Yes : death (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   copat_coronarydisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_haematemesis = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_thoracicpain = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes : death (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_diabetes = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 77
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 77 : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_diabetes = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 5.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 75 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 75 : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 5.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 88 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 88 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_thoracicpain = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_haematemesis = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 8.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 83.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 83.5 : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 8.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_diarrhea = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_thoracicpain = No : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_thoracicpain = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_ageusia = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   copat_atrialfibrillation = Yes : death (3/0)
+|   |   |   |   |   |   |   syn_adm_hackingcough = Yes
+|   |   |   |   |   |   |   |   copat_diabetes = Yes : death (4/0)
+|   |   |   |   |   |   |   |   copat_diabetes = No
+|   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes : death (3/0)
+|   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   |   |   |   |   age < 76.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   age >= 76.5 : death (3/0)
+|   |   |   copat_dementia = Yes : death (6/0)
+|   |   sex = female
+|   |   |   age < 89.5
+|   |   |   |   charlsoncomorbidityindex < 6.5
+|   |   |   |   |   copat_diabetes = Yes
+|   |   |   |   |   |   copat_activecancerlast5years = No
+|   |   |   |   |   |   |   charlsoncomorbidityindex < 4.5 : discharge (3/0)
+|   |   |   |   |   |   |   charlsoncomorbidityindex >= 4.5
+|   |   |   |   |   |   |   |   copat_COPD = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   copat_COPD = No
+|   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 5.5
+|   |   |   |   |   |   |   |   |   |   syn_adm_fever = No
+|   |   |   |   |   |   |   |   |   |   |   copat_stroke = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   |   |   |   |   |   |   copat_obesity = No : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   copat_obesity = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   age < 83.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   age >= 83.5
+|   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 5.5 : death (1/0)
+|   |   |   |   |   |   copat_activecancerlast5years = Yes : death (4/0)
+|   |   |   |   |   copat_diabetes = No
+|   |   |   |   |   |   syn_adm_hackingcough = No
+|   |   |   |   |   |   |   copat_COPD = Yes
+|   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes
+|   |   |   |   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   |   |   |   copat_obesity = No
+|   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   age < 84.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age >= 84.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   copat_obesity = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   copat_atrialfibrillation = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   syn_adm_dyspnoea = No : death (2/0)
+|   |   |   |   |   |   |   copat_COPD = No
+|   |   |   |   |   |   |   |   syn_adm_anosmia = No
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes
+|   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = No
+|   |   |   |   |   |   |   |   |   |   |   copat_stroke = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   age < 78 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age >= 78
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_obesity = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 5.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dementia = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dementia = Yes : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 86.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dementia = No : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dementia = Yes : death (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 86.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 5.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_obesity = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   age < 81.5 : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age >= 81.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = Yes : discharge (2/0)
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   |   |   |   age < 85.5
+|   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 5.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 4.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = No : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 4.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 5.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   age >= 85.5 : discharge (5/0)
+|   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : death (2/0)
+|   |   |   |   |   |   |   |   syn_adm_anosmia = Yes : discharge (1/0)
+|   |   |   |   |   |   syn_adm_hackingcough = Yes
+|   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   copat_chronickidneyfailure = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   copat_chronickidneyfailure = No
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes : death (4/0)
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   syn_adm_nausea = No : death (3/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_nausea = Yes : discharge (1/0)
+|   |   |   |   |   |   |   copat_dyslipidaemia = Yes : death (1/0)
+|   |   |   |   charlsoncomorbidityindex >= 6.5
+|   |   |   |   |   copat_ischemicheartdisease = Yes : death (3/0)
+|   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   syn_adm_diarrhea = No
+|   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   copat_cerebrovasculardisease = No
+|   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 11
+|   |   |   |   |   |   |   |   |   |   age < 78.5
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   age >= 78.5
+|   |   |   |   |   |   |   |   |   |   |   copat_dementia = No
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   copat_stroke = Yes : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 86.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 86.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_dementia = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 11 : death (2/0)
+|   |   |   |   |   |   |   |   copat_cerebrovasculardisease = Yes : death (2/0)
+|   |   |   |   |   |   |   copat_dyslipidaemia = Yes
+|   |   |   |   |   |   |   |   syn_adm_fever = No
+|   |   |   |   |   |   |   |   |   copat_activecancerlast5years = No : death (1/0)
+|   |   |   |   |   |   |   |   |   copat_activecancerlast5years = Yes : discharge (2/0)
+|   |   |   |   |   |   |   |   syn_adm_fever = Yes : death (1/0)
+|   |   |   |   |   |   syn_adm_diarrhea = Yes : discharge (1/0)
+|   |   |   age >= 89.5
+|   |   |   |   copat_COPD = Yes
+|   |   |   |   |   charlsoncomorbidityindex < 5.5 : discharge (1/0)
+|   |   |   |   |   charlsoncomorbidityindex >= 5.5 : death (1/0)
+|   |   |   |   copat_COPD = No
+|   |   |   |   |   syn_adm_tiredness = No
+|   |   |   |   |   |   copat_stroke = Yes : death (1/0)
+|   |   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   |   charlsoncomorbidityindex < 5.5
+|   |   |   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes : death (2/0)
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   copat_diabetes = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   copat_diabetes = No
+|   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = No : death (3/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_cerebrovasculardisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   copat_atrialfibrillation = Yes : death (4/0)
+|   |   |   |   |   |   |   charlsoncomorbidityindex >= 5.5 : death (6/0)
+|   |   |   |   |   syn_adm_tiredness = Yes : discharge (2/0)
+copat_highbloodpressure = No
+|   copat_dementia = No
+|   |   copat_cerebrovasculardisease = No
+|   |   |   charlsoncomorbidityindex < 3.5
+|   |   |   |   syn_adm_fever = No
+|   |   |   |   |   copat_stroke = Yes : discharge (2/0)
+|   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   sex = male
+|   |   |   |   |   |   |   syn_adm_dyspnoea = Yes
+|   |   |   |   |   |   |   |   syn_adm_thoracicpain = No
+|   |   |   |   |   |   |   |   |   age < 71
+|   |   |   |   |   |   |   |   |   |   age < 57.5
+|   |   |   |   |   |   |   |   |   |   |   age < 50.5 : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   |   age >= 50.5
+|   |   |   |   |   |   |   |   |   |   |   |   copat_coronarydisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   copat_coronarydisease = No : death (1/0)
+|   |   |   |   |   |   |   |   |   |   age >= 57.5 : discharge (3/0)
+|   |   |   |   |   |   |   |   |   age >= 71 : death (1/0)
+|   |   |   |   |   |   |   |   syn_adm_thoracicpain = Yes : discharge (1/0)
+|   |   |   |   |   |   |   syn_adm_dyspnoea = No : discharge (28/0)
+|   |   |   |   |   |   sex = female
+|   |   |   |   |   |   |   syn_adm_hackingcough = No
+|   |   |   |   |   |   |   |   copat_none = No
+|   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 1.5 : discharge (8/0)
+|   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 1.5
+|   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes : discharge (3/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   |   age < 60 : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   |   age >= 60 : death (1/0)
+|   |   |   |   |   |   |   |   copat_none = Yes : discharge (37/0)
+|   |   |   |   |   |   |   syn_adm_hackingcough = Yes : discharge (5/0)
+|   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   syn_adm_diarrhea = No
+|   |   |   |   |   |   age < 78.5
+|   |   |   |   |   |   |   syn_adm_anosmia = No
+|   |   |   |   |   |   |   |   copat_stroke = Yes : death (1/0)
+|   |   |   |   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   |   |   |   copat_coronarydisease = Yes
+|   |   |   |   |   |   |   |   |   |   age < 65 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   age >= 65 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   copat_coronarydisease = No
+|   |   |   |   |   |   |   |   |   |   copat_diabetes = Yes : discharge (6/0)
+|   |   |   |   |   |   |   |   |   |   copat_diabetes = No
+|   |   |   |   |   |   |   |   |   |   |   copat_obesity = No
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_musclepain = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 2.5 : discharge (80/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 2.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_hackingcough = No : discharge (10/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_hackingcough = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = male
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 76.5 : discharge (9/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 76.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = female
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_COPD = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_COPD = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 73.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 73.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_musclepain = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_chills = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 1.5 : discharge (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = No : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_tiredness = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_chills = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_obesity = Yes : discharge (4/0)
+|   |   |   |   |   |   |   syn_adm_anosmia = Yes
+|   |   |   |   |   |   |   |   charlsoncomorbidityindex < 1.5
+|   |   |   |   |   |   |   |   |   copat_diabetes = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   copat_diabetes = No : discharge (5/0)
+|   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 1.5 : discharge (4/0)
+|   |   |   |   |   |   age >= 78.5 : death (3/0)
+|   |   |   |   |   syn_adm_diarrhea = Yes : discharge (19/0)
+|   |   |   charlsoncomorbidityindex >= 3.5
+|   |   |   |   syn_adm_thoracicpain = No
+|   |   |   |   |   age < 71.5
+|   |   |   |   |   |   charlsoncomorbidityindex < 4.5 : discharge (9/0)
+|   |   |   |   |   |   charlsoncomorbidityindex >= 4.5
+|   |   |   |   |   |   |   age < 56
+|   |   |   |   |   |   |   |   copat_chronicepaticdisease = No
+|   |   |   |   |   |   |   |   |   copat_hiv = No
+|   |   |   |   |   |   |   |   |   |   syn_adm_musclepain = No
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 6.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 6.5 : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_musclepain = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   copat_hiv = Yes : discharge (2/0)
+|   |   |   |   |   |   |   |   copat_chronicepaticdisease = Yes : death (1/0)
+|   |   |   |   |   |   |   age >= 56
+|   |   |   |   |   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   |   |   |   |   copat_hiv = No
+|   |   |   |   |   |   |   |   |   |   age < 66.5
+|   |   |   |   |   |   |   |   |   |   |   age < 59.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   age >= 59.5 : death (6/0)
+|   |   |   |   |   |   |   |   |   |   age >= 66.5
+|   |   |   |   |   |   |   |   |   |   |   copat_activecancerlast5years = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_activecancerlast5years = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   age < 69.5 : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   age >= 69.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = male : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = female : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   copat_hiv = Yes : death (1/0)
+|   |   |   |   |   |   |   |   copat_dyslipidaemia = Yes : discharge (1/0)
+|   |   |   |   |   age >= 71.5
+|   |   |   |   |   |   syn_adm_tiredness = No
+|   |   |   |   |   |   |   copat_coronarydisease = Yes
+|   |   |   |   |   |   |   |   copat_chronickidneyfailure = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   copat_chronickidneyfailure = No
+|   |   |   |   |   |   |   |   |   copat_COPD = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   copat_COPD = No : discharge (3/0)
+|   |   |   |   |   |   |   copat_coronarydisease = No
+|   |   |   |   |   |   |   |   syn_adm_hackingcough = No
+|   |   |   |   |   |   |   |   |   copat_hepatitisB = No
+|   |   |   |   |   |   |   |   |   |   syn_adm_fever = No
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_phlegmcough = No
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_rhinorrhoea = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   age < 78 : death (9/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age >= 78
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_chronicepaticdisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_stroke = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_chronickidneyfailure = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_chronickidneyfailure = No : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_stroke = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_diabetes = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 81 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 81
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 89 : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 89 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_atrialfibrillation = Yes : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_diabetes = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = male
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 84.5 : discharge (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 84.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_none = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes : death (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 6.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_activecancerlast5years = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_COPD = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_COPD = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_activecancerlast5years = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 6.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_none = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = female
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 4.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_none = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_none = Yes : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 4.5 : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_chronicepaticdisease = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_vomiting = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   syn_adm_rhinorrhoea = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   syn_adm_phlegmcough = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   age < 85.5
+|   |   |   |   |   |   |   |   |   |   |   |   copat_activecancerlast5years = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = male
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 78.5 : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 78.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 80.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 80.5 : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = female : death (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_chronickidneyfailure = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 77 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 77 : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_chronickidneyfailure = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_COPD = Yes : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_COPD = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_none = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_none = Yes : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   copat_activecancerlast5years = Yes : death (3/0)
+|   |   |   |   |   |   |   |   |   |   |   age >= 85.5 : death (8/0)
+|   |   |   |   |   |   |   |   |   copat_hepatitisB = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   syn_adm_hackingcough = Yes
+|   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = Yes
+|   |   |   |   |   |   |   |   |   |   age < 76.5 : discharge (2/0)
+|   |   |   |   |   |   |   |   |   |   age >= 76.5 : death (2/0)
+|   |   |   |   |   |   |   |   |   copat_ischemicheartdisease = No
+|   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 5.5
+|   |   |   |   |   |   |   |   |   |   |   copat_chronickidneyfailure = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   copat_chronickidneyfailure = No
+|   |   |   |   |   |   |   |   |   |   |   |   copat_none = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 4.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = male
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age < 86 : death (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age >= 86 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   sex = female : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 4.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_COPD = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   copat_COPD = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex < 4.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 4.5 : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   copat_none = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = No : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_pharingalpain = No : death (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   syn_adm_pharingalpain = Yes : discharge (1/0)
+|   |   |   |   |   |   |   |   |   |   charlsoncomorbidityindex >= 5.5 : death (2/0)
+|   |   |   |   |   |   syn_adm_tiredness = Yes
+|   |   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   |   copat_activecancerlast5years = No
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = Yes : discharge (2/0)
+|   |   |   |   |   |   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   |   |   |   |   |   sex = male : death (1/0)
+|   |   |   |   |   |   |   |   |   |   sex = female : discharge (1/0)
+|   |   |   |   |   |   |   |   copat_activecancerlast5years = Yes
+|   |   |   |   |   |   |   |   |   age < 82.5 : discharge (1/0)
+|   |   |   |   |   |   |   |   |   age >= 82.5 : death (1/0)
+|   |   |   |   |   |   |   copat_atrialfibrillation = Yes : discharge (1/0)
+|   |   |   |   syn_adm_thoracicpain = Yes : discharge (4/0)
+|   |   copat_cerebrovasculardisease = Yes
+|   |   |   age < 53.5 : discharge (1/0)
+|   |   |   age >= 53.5
+|   |   |   |   syn_adm_dyspnoea = Yes : death (6/0)
+|   |   |   |   syn_adm_dyspnoea = No
+|   |   |   |   |   copat_diabetes = Yes
+|   |   |   |   |   |   sex = male : death (1/0)
+|   |   |   |   |   |   sex = female : discharge (1/0)
+|   |   |   |   |   copat_diabetes = No
+|   |   |   |   |   |   age < 90.5 : discharge (2/0)
+|   |   |   |   |   |   age >= 90.5 : death (1/0)
+|   copat_dementia = Yes
+|   |   syn_adm_musclepain = No
+|   |   |   syn_adm_dyspnoea = Yes
+|   |   |   |   copat_dyslipidaemia = No
+|   |   |   |   |   syn_adm_fever = No
+|   |   |   |   |   |   age < 88
+|   |   |   |   |   |   |   age < 79 : death (2/0)
+|   |   |   |   |   |   |   age >= 79
+|   |   |   |   |   |   |   |   age < 83
+|   |   |   |   |   |   |   |   |   sex = male : discharge (1/0)
+|   |   |   |   |   |   |   |   |   sex = female : death (1/0)
+|   |   |   |   |   |   |   |   age >= 83 : discharge (1/0)
+|   |   |   |   |   |   age >= 88 : death (3/0)
+|   |   |   |   |   syn_adm_fever = Yes
+|   |   |   |   |   |   copat_atrialfibrillation = No
+|   |   |   |   |   |   |   charlsoncomorbidityindex < 4.5 : discharge (1/0)
+|   |   |   |   |   |   |   charlsoncomorbidityindex >= 4.5
+|   |   |   |   |   |   |   |   copat_deepveinthrombosis = No : death (3/0)
+|   |   |   |   |   |   |   |   copat_deepveinthrombosis = Yes : discharge (1/0)
+|   |   |   |   |   |   copat_atrialfibrillation = Yes : death (1/0)
+|   |   |   |   copat_dyslipidaemia = Yes : death (1/0)
+|   |   |   syn_adm_dyspnoea = No
+|   |   |   |   copat_chronickidneyfailure = Yes : discharge (1/0)
+|   |   |   |   copat_chronickidneyfailure = No
+|   |   |   |   |   age < 84
+|   |   |   |   |   |   copat_activecancerlast5years = No
+|   |   |   |   |   |   |   charlsoncomorbidityindex < 5.5 : discharge (3/0)
+|   |   |   |   |   |   |   charlsoncomorbidityindex >= 5.5 : death (2/0)
+|   |   |   |   |   |   copat_activecancerlast5years = Yes : death (1/0)
+|   |   |   |   |   age >= 84 : death (7/0)
+|   |   syn_adm_musclepain = Yes : death (1/0)
+
+Size of the tree : 633
+
+Time taken to build model: 0 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances          50               70.4225 %
+Incorrectly Classified Instances        21               29.5775 %
+Kappa statistic                          0.2287
+Mean absolute error                      0.2958
+Root mean squared error                  0.5439
+Relative absolute error                 70.9883 %
+Root relative squared error            127.3042 %
+Total Number of Instances               71     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,583    0,271    0,304      0,583    0,400      0,250    0,656     0,248     death
+                 0,729    0,417    0,896      0,729    0,804      0,250    0,656     0,878     discharge
+Weighted Avg.    0,704    0,392    0,796      0,704    0,736      0,250    0,656     0,772     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  7  5 |  a = death
+ 16 43 |  b = discharge
+

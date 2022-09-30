@@ -1,0 +1,105 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.REPTree -M 2 -V 0.001 -N 5 -S 1 -L -1 -I 0.0 -R
+Relation:     Datiok_20210617-weka.filters.unsupervised.attribute.Remove-R3,45
+Instances:    824
+Attributes:   44
+              age
+              sex
+              syn_adm_fever
+              syn_adm_chills
+              syn_adm_hackingcough
+              syn_adm_phlegmcough
+              syn_adm_conjunctivitis
+              syn_adm_rhinorrhoea
+              syn_adm_headache
+              syn_adm_musclepain
+              syn_adm_tiredness
+              syn_adm_nausea
+              syn_adm_vomiting
+              syn_adm_diarrhea
+              syn_adm_dyspnoea
+              syn_adm_haemoptysis
+              syn_adm_haematemesis
+              syn_adm_ageusia
+              syn_adm_anosmia
+              syn_adm_abdominalpain
+              syn_adm_thoracicpain
+              syn_adm_pharingalpain
+              copat_none
+              copat_COPD
+              copat_diabetes
+              copat_highbloodpressure
+              copat_coronarydisease
+              copat_cerebrovasculardisease
+              copat_hepatitisB
+              copat_activecancerlast5years
+              copat_chronickidneyfailure
+              copat_immunodeficiency
+              copat_ischemicheartdisease
+              copat_stroke
+              copat_dementia
+              copat_chronicepaticdisease
+              copat_hiv
+              copat_atrialfibrillation
+              copat_deepveinthrombosis
+              copat_pulmonaryembolism
+              copat_obesity
+              copat_dyslipidaemia
+              charlsoncomorbidityindex
+              dischargetype
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+
+REPTree
+============
+
+charlsoncomorbidityindex < 3.5 : discharge (301/17) [73/3]
+charlsoncomorbidityindex >= 3.5
+|   charlsoncomorbidityindex < 4.5
+|   |   age < 71.5 : discharge (21/3) [2/1]
+|   |   age >= 71.5 : death (100/44) [23/8]
+|   charlsoncomorbidityindex >= 4.5
+|   |   age < 80.5
+|   |   |   copat_COPD = Yes : death (23/3) [8/2]
+|   |   |   copat_COPD = No
+|   |   |   |   copat_cerebrovasculardisease = No
+|   |   |   |   |   age < 61 : discharge (9/2) [3/1]
+|   |   |   |   |   age >= 61 : death (62/29) [18/7]
+|   |   |   |   copat_cerebrovasculardisease = Yes : death (4/0) [0/0]
+|   |   age >= 80.5 : death (139/27) [38/14]
+
+Size of the tree : 15
+
+Time taken to build model: 0.01 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances          49               69.0141 %
+Incorrectly Classified Instances        22               30.9859 %
+Kappa statistic                          0.2469
+Mean absolute error                      0.2939
+Root mean squared error                  0.4211
+Relative absolute error                 70.5334 %
+Root relative squared error             98.5649 %
+Total Number of Instances               71     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,667    0,305    0,308      0,667    0,421      0,281    0,701     0,281     death
+                 0,695    0,333    0,911      0,695    0,788      0,281    0,701     0,902     discharge
+Weighted Avg.    0,690    0,329    0,809      0,690    0,726      0,281    0,701     0,798     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  8  4 |  a = death
+ 18 41 |  b = discharge
+

@@ -1,0 +1,97 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1 -E
+Relation:     Datiok_20210617-weka.filters.unsupervised.attribute.Remove-R3,45
+Instances:    824
+Attributes:   44
+              age
+              sex
+              syn_adm_fever
+              syn_adm_chills
+              syn_adm_hackingcough
+              syn_adm_phlegmcough
+              syn_adm_conjunctivitis
+              syn_adm_rhinorrhoea
+              syn_adm_headache
+              syn_adm_musclepain
+              syn_adm_tiredness
+              syn_adm_nausea
+              syn_adm_vomiting
+              syn_adm_diarrhea
+              syn_adm_dyspnoea
+              syn_adm_haemoptysis
+              syn_adm_haematemesis
+              syn_adm_ageusia
+              syn_adm_anosmia
+              syn_adm_abdominalpain
+              syn_adm_thoracicpain
+              syn_adm_pharingalpain
+              copat_none
+              copat_COPD
+              copat_diabetes
+              copat_highbloodpressure
+              copat_coronarydisease
+              copat_cerebrovasculardisease
+              copat_hepatitisB
+              copat_activecancerlast5years
+              copat_chronickidneyfailure
+              copat_immunodeficiency
+              copat_ischemicheartdisease
+              copat_stroke
+              copat_dementia
+              copat_chronicepaticdisease
+              copat_hiv
+              copat_atrialfibrillation
+              copat_deepveinthrombosis
+              copat_pulmonaryembolism
+              copat_obesity
+              copat_dyslipidaemia
+              charlsoncomorbidityindex
+              dischargetype
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(syn_adm_dyspnoea = Yes) and (charlsoncomorbidityindex >= 6) => dischargetype=death (85.0/14.0)
+(charlsoncomorbidityindex >= 4) and (syn_adm_dyspnoea = Yes) and (age >= 89) => dischargetype=death (22.0/2.0)
+(charlsoncomorbidityindex >= 4) and (syn_adm_fever = Yes) and (age >= 72) => dischargetype=death (144.0/40.0)
+(age >= 74) and (charlsoncomorbidityindex >= 5) => dischargetype=death (82.0/34.0)
+(copat_diabetes = Yes) and (charlsoncomorbidityindex >= 5) => dischargetype=death (21.0/6.0)
+ => dischargetype=discharge (470.0/50.0)
+
+Number of Rules : 6
+
+
+Time taken to build model: 0.04 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances          54               76.0563 %
+Incorrectly Classified Instances        17               23.9437 %
+Kappa statistic                          0.3083
+Mean absolute error                      0.2725
+Root mean squared error                  0.3883
+Relative absolute error                 65.3934 %
+Root relative squared error             90.902  %
+Total Number of Instances               71     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,583    0,203    0,368      0,583    0,452      0,322    0,714     0,400     death
+                 0,797    0,417    0,904      0,797    0,847      0,322    0,714     0,898     discharge
+Weighted Avg.    0,761    0,381    0,813      0,761    0,780      0,322    0,714     0,814     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  7  5 |  a = death
+ 12 47 |  b = discharge
+

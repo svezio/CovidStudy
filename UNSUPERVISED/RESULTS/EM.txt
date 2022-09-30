@@ -1,0 +1,269 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.EM -I 100 -N -1 -X 10 -max -1 -ll-cv 1.0E-6 -ll-iter 1.0E-6 -M 1.0E-6 -K 10 -num-slots 1 -S 100
+Relation:     Datiok_20210617-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.Remove-R44
+Instances:    824
+Attributes:   44
+              age
+              sex
+              syn_adm_fever
+              syn_adm_chills
+              syn_adm_hackingcough
+              syn_adm_phlegmcough
+              syn_adm_conjunctivitis
+              syn_adm_rhinorrhoea
+              syn_adm_headache
+              syn_adm_musclepain
+              syn_adm_tiredness
+              syn_adm_nausea
+              syn_adm_vomiting
+              syn_adm_diarrhea
+              syn_adm_dyspnoea
+              syn_adm_haemoptysis
+              syn_adm_haematemesis
+              syn_adm_ageusia
+              syn_adm_anosmia
+              syn_adm_abdominalpain
+              syn_adm_thoracicpain
+              syn_adm_pharingalpain
+              copat_none
+              copat_COPD
+              copat_diabetes
+              copat_highbloodpressure
+              copat_coronarydisease
+              copat_cerebrovasculardisease
+              copat_hepatitisB
+              copat_activecancerlast5years
+              copat_chronickidneyfailure
+              copat_immunodeficiency
+              copat_ischemicheartdisease
+              copat_stroke
+              copat_dementia
+              copat_chronicepaticdisease
+              copat_hiv
+              copat_atrialfibrillation
+              copat_deepveinthrombosis
+              copat_pulmonaryembolism
+              copat_obesity
+              copat_dyslipidaemia
+              charlsoncomorbidityindex
+Ignored:
+              dischargetype
+Test mode:    Classes to clusters evaluation on training data
+
+=== Clustering model (full training set) ===
+
+
+EM
+==
+
+Number of clusters selected by cross validation: 4
+Number of iterations performed: 12
+
+
+                                Cluster
+Attribute                             0        1        2        3
+                                 (0.13)   (0.23)   (0.33)   (0.31)
+===================================================================
+age
+  mean                           35.9959  76.6051  82.4832  61.0036
+  std. dev.                        8.608  11.3118   6.3774   8.4839
+
+sex
+  male                           41.8945 131.1816 135.1615 173.7623
+  female                         66.4447  56.2717 140.6325  86.6511
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_fever
+  No                             61.1936  97.4623 141.2198  67.1243
+  Yes                            47.1457  89.9911 134.5741 193.2891
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_chills
+  No                            104.8273 185.4525 274.7939 255.9263
+  Yes                             3.5119   2.0009        1   4.4872
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_hackingcough
+  No                             75.9464 152.6652 220.5567 150.8317
+  Yes                            32.3929  34.7882  55.2372 109.5817
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_phlegmcough
+  No                            106.3422 184.1934  271.871 253.5935
+  Yes                             1.9971     3.26   3.9229     6.82
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_conjunctivitis
+  No                            107.3393 186.4534 274.7939 259.4134
+  [total]                       107.3393 186.4534 274.7939 259.4134
+syn_adm_rhinorrhoea
+  No                            107.3393 186.4262 271.9859 259.2486
+  Yes                                  1   1.0271   3.8081   1.1648
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_headache
+  No                               99.52 184.5318 272.2502  245.698
+  Yes                             8.8193   2.9216   3.5437  14.7155
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_musclepain
+  No                             95.9913  182.675 271.5979 242.7359
+  Yes                             12.348   4.7784    4.196  17.6775
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_tiredness
+  No                            104.0664  173.306 255.9728 237.6548
+  Yes                             4.2729  14.1474  19.8211  22.7587
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_nausea
+  No                            100.9246 183.1226 267.2494 245.7034
+  Yes                             7.4147   4.3308   8.5445    14.71
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_vomiting
+  No                            101.4362 180.8435 262.7891 250.9311
+  Yes                             6.9031   6.6099  13.0048   9.4823
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_diarrhea
+  No                            104.6693 173.5376 266.5722  222.221
+  Yes                               3.67  13.9158   9.2217  38.1925
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_dyspnoea
+  Yes                            32.3949  72.3843 158.5355 134.6853
+  No                             75.9444  115.069 117.2584 125.7281
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_haemoptysis
+  No                            107.3393 186.4358 273.8115 259.4134
+  Yes                                  1   1.0176   1.9824        1
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_haematemesis
+  No                            107.3393 184.5101 273.7389 259.4117
+  Yes                                  1   2.9433    2.055   1.0017
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_ageusia
+  No                            101.8697 183.3646 270.4168  244.349
+  Yes                             6.4696   4.0888   5.3771  16.0645
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_anosmia
+  No                             102.928 186.4072 271.5045 244.1603
+  Yes                             5.4113   1.0462   4.2894  16.2532
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_abdominalpain
+  No                            104.3408 181.6941 269.3693 251.5958
+  Yes                             3.9985   5.7593   6.4246   8.8177
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_thoracicpain
+  No                            105.8393 182.7446 269.5181  255.898
+  Yes                                2.5   4.7088   6.2758   4.5154
+  [total]                       108.3393 187.4534 275.7939 260.4134
+syn_adm_pharingalpain
+  No                            105.3419 185.4262 274.4578 253.7741
+  Yes                             2.9974   2.0272   1.3361   6.6394
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_none
+  No                             41.3613 186.4198 263.4123 192.8066
+  Yes                             66.978   1.0336  12.3816  67.6068
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_COPD
+  Yes                             1.0001  36.9194  36.8229   4.2576
+  No                            107.3391  150.534 238.9711 256.1558
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_diabetes
+  Yes                             1.0016   92.023  38.9802  27.9953
+  No                            107.3377  95.4304 236.8137 232.4182
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_highbloodpressure
+  Yes                              9.025 114.5879 164.7535 102.6336
+  No                             99.3143  72.8654 111.0404 157.7799
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_coronarydisease
+  Yes                             1.0002   20.808  13.9151   7.2767
+  No                            107.3391 166.6454 261.8788 253.1367
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_cerebrovasculardisease
+  No                            106.3394 173.8099 240.2979 257.5528
+  Yes                             1.9999  13.6435   35.496   2.8607
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_hepatitisB
+  No                            107.3393 186.4428 273.8046 259.4134
+  Yes                                  1   1.0106   1.9894        1
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_activecancerlast5years
+  No                            105.4445 125.9895 255.6628 247.9032
+  Yes                             2.8948  61.4639  20.1311  12.5103
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_chronickidneyfailure
+  Yes                                  1  58.7343   5.4001   6.8656
+  No                            107.3393 128.7191 270.3938 253.5478
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_immunodeficiency
+  No                            107.3393 185.4534 274.7939 259.4134
+  Yes                                  1        2        1        1
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_ischemicheartdisease
+  Yes                                  1  63.4478  35.7861   8.7662
+  No                            107.3393 124.0056 240.0078 251.6473
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_stroke
+  Yes                             1.3032  30.9197  16.9777   5.7994
+  No                             107.036 156.5337 258.8162 254.6141
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_dementia
+  No                            107.3393 171.4542 245.7982 259.4084
+  Yes                                  1  15.9992  29.9957   1.0051
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_chronicepaticdisease
+  No                            107.3393 178.0728 273.0819  258.506
+  Yes                                  1   9.3806    2.712   1.9075
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_hiv
+  No                            106.3396  183.514 274.7936 259.3528
+  Yes                             1.9997   3.9394   1.0003   1.0606
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_atrialfibrillation
+  No                            107.3393 160.1433 242.6665  254.851
+  Yes                                  1  27.3101  33.1274   5.5624
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_deepveinthrombosis
+  No                            107.3393 183.3882 272.9224 258.3502
+  Yes                                  1   4.0652   2.8715   2.0633
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_pulmonaryembolism
+  No                            107.3393 179.2637 273.9835 258.4135
+  Yes                                  1   8.1897   1.8104   1.9999
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_obesity
+  No                            105.1254 175.6265 264.4744 242.7737
+  Yes                             3.2139  11.8269  11.3195  17.6397
+  [total]                       108.3393 187.4534 275.7939 260.4134
+copat_dyslipidaemia
+  No                             107.193 158.6551 252.7845 246.3674
+  Yes                             1.1463  28.7983  23.0094   14.046
+  [total]                       108.3393 187.4534 275.7939 260.4134
+charlsoncomorbidityindex
+  mean                            0.0137   7.1163   4.6405   2.0558
+  std. dev.                       0.1162   2.2483   0.9104   0.9171
+
+
+
+Time taken to build model (full training data) : 4.19 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      107 ( 13%)
+1      169 ( 21%)
+2      292 ( 35%)
+3      256 ( 31%)
+
+
+Log likelihood: -14.30707
+
+
+Class attribute: dischargetype
+Classes to Clusters:
+
+   0   1   2   3  <-- assigned to cluster
+   0 117 175  16 | death
+ 107  52 117 240 | discharge
+
+Cluster 0 <-- No class
+Cluster 1 <-- No class
+Cluster 2 <-- death
+Cluster 3 <-- discharge
+
+Incorrectly clustered instances :	409.0	 49.6359 %
+
