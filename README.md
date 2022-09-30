@@ -8,7 +8,7 @@ UNSUPERVISED/  ;;unsupervised models tested  in Weka format (.model)
    |
    ├─RESULTS/ ;; unsupervised models results
    |
-WHITEBOX/      ;;supervised white box models tested in Weka format (.model)
+WHITEBOX/      ;;supervised white box models in Weka format (.model)
    |
    ├─RESULTS/
         |
@@ -16,7 +16,7 @@ WHITEBOX/      ;;supervised white box models tested in Weka format (.model)
         |
         ├─EXTERNAL_DATASET/          ;;models results with the external dataset from 3rd wave
         |
-BLACKBOX/     ;;supervised white box models  tested in Weka format (.model)
+BLACKBOX/     ;;supervised black box models   in Weka format (.model)
    |
    ├─RESULTS/
         |
