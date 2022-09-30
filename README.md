@@ -4,7 +4,7 @@ This repository contains the models and the results  produced for the paper "Bot
 THE REPOSITORY STRUCTURE IS THE FOLLOWING
 
 ```
-UNSUPERVISED/  ;;unsupervised models tested  in Weka format (.model)
+UNSUPERVISED/  ;;unsupervised models   in Weka format (.model)
    |
    ├─RESULTS/ ;; unsupervised models results
    |
