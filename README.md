@@ -1,5 +1,31 @@
-# CovidStudyDataset
-This repository contains the dataset files used for the paper "Bottrighi et al., A machine learning approach for predicting high risk hospitalized patients with COVID-19 SARS-Cov-2" submitted to "BMC medical informatics and decision medicine".
+# CovidStudy
+This repository contains the models and the results  produced for the paper "Bottrighi et al., A machine learning approach for predicting high risk hospitalized patients with COVID-19 SARS-Cov-2" submitted to "BMC medical informatics and decision medicine".
+
+THE REPOSITORY STRUCTURE IS THE FOLLOWING
+
+UNSUPERVISED/  ;;unsupervised models tested  in Weka format (.model)
+   |
+WHITEBOX/      ;;supervised white box models tested in Weka format (.model)
+   |
+   ├─RESULTS/
+        |
+        ├─10_FOLD_CROSS_VALIDATION/  ;;models results with 10-fold cross validation
+        |
+        ├─EXTERNAL_DATASET/          ;;models results with the external dataset from 3rd wave
+        |
+BLACKBOX/     ;;supervised white box models  tested in Weka format (.model)
+   |
+   ├─RESULTS/
+        |
+        ├─10_FOLD_CROSS_VALIDATION/  ;;models results with 10-fold cross validation
+        |
+        ├─EXTERNAL_DATASET/          ;;models results with the external dataset from 3rd wave
+        |
+
+
+
+
+FOR REVIEWERS ONLY
 
 Two Weka datasets are availble:
 Dataset1.arff and Dataset2.arff
