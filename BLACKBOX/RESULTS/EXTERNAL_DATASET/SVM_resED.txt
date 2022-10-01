@@ -1,0 +1,141 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     Datiok_20210617-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.Remove-R44
+Instances:    824
+Attributes:   44
+              age
+              sex
+              syn_adm_fever
+              syn_adm_chills
+              syn_adm_hackingcough
+              syn_adm_phlegmcough
+              syn_adm_conjunctivitis
+              syn_adm_rhinorrhoea
+              syn_adm_headache
+              syn_adm_musclepain
+              syn_adm_tiredness
+              syn_adm_nausea
+              syn_adm_vomiting
+              syn_adm_diarrhea
+              syn_adm_dyspnoea
+              syn_adm_haemoptysis
+              syn_adm_haematemesis
+              syn_adm_ageusia
+              syn_adm_anosmia
+              syn_adm_abdominalpain
+              syn_adm_thoracicpain
+              syn_adm_pharingalpain
+              copat_none
+              copat_COPD
+              copat_diabetes
+              copat_highbloodpressure
+              copat_coronarydisease
+              copat_cerebrovasculardisease
+              copat_hepatitisB
+              copat_activecancerlast5years
+              copat_chronickidneyfailure
+              copat_immunodeficiency
+              copat_ischemicheartdisease
+              copat_stroke
+              copat_dementia
+              copat_chronicepaticdisease
+              copat_hiv
+              copat_atrialfibrillation
+              copat_deepveinthrombosis
+              copat_pulmonaryembolism
+              copat_obesity
+              copat_dyslipidaemia
+              charlsoncomorbidityindex
+              dischargetype
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: death, discharge
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -4.705  * (normalized) age
+ +       0.1015 * (normalized) sex=female
+ +      -0.2371 * (normalized) syn_adm_fever=Yes
+ +      -0.0182 * (normalized) syn_adm_hackingcough=Yes
+ +       0.4866 * (normalized) syn_adm_phlegmcough=Yes
+ +       1.0235 * (normalized) syn_adm_rhinorrhoea=Yes
+ +       0.2472 * (normalized) syn_adm_headache=Yes
+ +       0.1541 * (normalized) syn_adm_musclepain=Yes
+ +       0.4932 * (normalized) syn_adm_tiredness=Yes
+ +      -0.0346 * (normalized) syn_adm_nausea=Yes
+ +      -0.1272 * (normalized) syn_adm_vomiting=Yes
+ +       0.2105 * (normalized) syn_adm_diarrhea=Yes
+ +       0.5825 * (normalized) syn_adm_dyspnoea=No
+ +      -0.509  * (normalized) syn_adm_haemoptysis=Yes
+ +      -0.0144 * (normalized) syn_adm_ageusia=Yes
+ +       0.9856 * (normalized) syn_adm_anosmia=Yes
+ +       1      * (normalized) syn_adm_abdominalpain=Yes
+ +       0.6893 * (normalized) syn_adm_thoracicpain=Yes
+ +       1.0601 * (normalized) syn_adm_pharingalpain=Yes
+ +       0.3249 * (normalized) copat_none=Yes
+ +       0.7053 * (normalized) copat_COPD=No
+ +       0.4843 * (normalized) copat_diabetes=No
+ +      -0.1182 * (normalized) copat_highbloodpressure=No
+ +      -0.2783 * (normalized) copat_coronarydisease=No
+ +      -0.7543 * (normalized) copat_cerebrovasculardisease=Yes
+ +       1      * (normalized) copat_hepatitisB=Yes
+ +      -0.4829 * (normalized) copat_activecancerlast5years=Yes
+ +       0.7629 * (normalized) copat_chronickidneyfailure=No
+ +       1      * (normalized) copat_immunodeficiency=Yes
+ +       0.2963 * (normalized) copat_ischemicheartdisease=No
+ +       0.6761 * (normalized) copat_stroke=No
+ +      -0.6712 * (normalized) copat_dementia=Yes
+ +      -0.2846 * (normalized) copat_chronicepaticdisease=Yes
+ +      -1      * (normalized) copat_hiv=Yes
+ +       0.1016 * (normalized) copat_atrialfibrillation=Yes
+ +       1      * (normalized) copat_deepveinthrombosis=Yes
+ +       0.2132 * (normalized) copat_pulmonaryembolism=Yes
+ +       0.6216 * (normalized) copat_obesity=Yes
+ +      -0.1598 * (normalized) copat_dyslipidaemia=Yes
+ +      -1.5415 * (normalized) charlsoncomorbidityindex
+ +       1.3995
+
+Number of kernel evaluations: 158278 (89.249% cached)
+
+
+
+Time taken to build model: 0.06 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances          57               80.2817 %
+Incorrectly Classified Instances        14               19.7183 %
+Kappa statistic                          0.4146
+Mean absolute error                      0.1972
+Root mean squared error                  0.4441
+Relative absolute error                 47.3256 %
+Root relative squared error            103.9435 %
+Total Number of Instances               71     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,667    0,169    0,444      0,667    0,533      0,428    0,749     0,353     death
+                 0,831    0,333    0,925      0,831    0,875      0,428    0,749     0,909     discharge
+Weighted Avg.    0,803    0,306    0,843      0,803    0,817      0,428    0,749     0,815     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  8  4 |  a = death
+ 10 49 |  b = discharge
+

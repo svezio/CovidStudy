@@ -1,0 +1,316 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.AdaBoostM1 -P 100 -S 1 -I 10 -W weka.classifiers.trees.DecisionStump
+Relation:     Datiok_20210617-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.Remove-R44
+Instances:    824
+Attributes:   44
+              age
+              sex
+              syn_adm_fever
+              syn_adm_chills
+              syn_adm_hackingcough
+              syn_adm_phlegmcough
+              syn_adm_conjunctivitis
+              syn_adm_rhinorrhoea
+              syn_adm_headache
+              syn_adm_musclepain
+              syn_adm_tiredness
+              syn_adm_nausea
+              syn_adm_vomiting
+              syn_adm_diarrhea
+              syn_adm_dyspnoea
+              syn_adm_haemoptysis
+              syn_adm_haematemesis
+              syn_adm_ageusia
+              syn_adm_anosmia
+              syn_adm_abdominalpain
+              syn_adm_thoracicpain
+              syn_adm_pharingalpain
+              copat_none
+              copat_COPD
+              copat_diabetes
+              copat_highbloodpressure
+              copat_coronarydisease
+              copat_cerebrovasculardisease
+              copat_hepatitisB
+              copat_activecancerlast5years
+              copat_chronickidneyfailure
+              copat_immunodeficiency
+              copat_ischemicheartdisease
+              copat_stroke
+              copat_dementia
+              copat_chronicepaticdisease
+              copat_hiv
+              copat_atrialfibrillation
+              copat_deepveinthrombosis
+              copat_pulmonaryembolism
+              copat_obesity
+              copat_dyslipidaemia
+              charlsoncomorbidityindex
+              dischargetype
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+AdaBoostM1: Base classifiers and their weights: 
+
+Decision Stump
+
+Classifications
+
+charlsoncomorbidityindex <= 3.5 : discharge
+charlsoncomorbidityindex > 3.5 : death
+charlsoncomorbidityindex is missing : discharge
+
+Class distributions
+
+charlsoncomorbidityindex <= 3.5
+death	discharge	
+0.053475935828877004	0.946524064171123	
+charlsoncomorbidityindex > 3.5
+death	discharge	
+0.64	0.36	
+charlsoncomorbidityindex is missing
+death	discharge	
+0.3737864077669903	0.6262135922330098	
+
+
+Weight: 1.26
+
+Decision Stump
+
+Classifications
+
+age <= 72.5 : discharge
+age > 72.5 : discharge
+age is missing : discharge
+
+Class distributions
+
+age <= 72.5
+death	discharge	
+0.12158943048743907	0.8784105695125609	
+age > 72.5
+death	discharge	
+0.3969860515181876	0.6030139484818124	
+age is missing
+death	discharge	
+0.27924412036561325	0.7207558796343867	
+
+
+Weight: 0.95
+
+Decision Stump
+
+Classifications
+
+age <= 69.5 : discharge
+age > 69.5 : death
+age is missing : death
+
+Class distributions
+
+age <= 69.5
+death	discharge	
+0.2266656392317895	0.7733343607682105	
+age > 69.5
+death	discharge	
+0.6119196646598182	0.388080335340182	
+age is missing
+death	discharge	
+0.5000000000000072	0.4999999999999928	
+
+
+Weight: 0.66
+
+Decision Stump
+
+Classifications
+
+charlsoncomorbidityindex <= 0.5 : discharge
+charlsoncomorbidityindex > 0.5 : discharge
+charlsoncomorbidityindex is missing : discharge
+
+Class distributions
+
+charlsoncomorbidityindex <= 0.5
+death	discharge	
+0.0	1.0	
+charlsoncomorbidityindex > 0.5
+death	discharge	
+0.4457334380840028	0.5542665619159972	
+charlsoncomorbidityindex is missing
+death	discharge	
+0.4259944797440328	0.5740055202559673	
+
+
+Weight: 0.3
+
+Decision Stump
+
+Classifications
+
+charlsoncomorbidityindex <= 0.5 : discharge
+charlsoncomorbidityindex > 0.5 : death
+charlsoncomorbidityindex is missing : death
+
+Class distributions
+
+charlsoncomorbidityindex <= 0.5
+death	discharge	
+0.0	1.0	
+charlsoncomorbidityindex > 0.5
+death	discharge	
+0.5200612238579507	0.4799387761420492	
+charlsoncomorbidityindex is missing
+death	discharge	
+0.5000000000000006	0.49999999999999944	
+
+
+Weight: 0.15
+
+Decision Stump
+
+Classifications
+
+age <= 46.5 : discharge
+age > 46.5 : discharge
+age is missing : discharge
+
+Class distributions
+
+age <= 46.5
+death	discharge	
+0.0	1.0	
+age > 46.5
+death	discharge	
+0.4816894331912611	0.518310566808739	
+age is missing
+death	discharge	
+0.46418813172189666	0.5358118682781035	
+
+
+Weight: 0.14
+
+Decision Stump
+
+Classifications
+
+age <= 46.5 : discharge
+age > 46.5 : death
+age is missing : death
+
+Class distributions
+
+age <= 46.5
+death	discharge	
+0.0	1.0	
+age > 46.5
+death	discharge	
+0.5175473270980842	0.4824526729019159	
+age is missing
+death	discharge	
+0.5000000000000013	0.49999999999999867	
+
+
+Weight: 0.14
+
+Decision Stump
+
+Classifications
+
+charlsoncomorbidityindex <= 0.5 : discharge
+charlsoncomorbidityindex > 0.5 : discharge
+charlsoncomorbidityindex is missing : discharge
+
+Class distributions
+
+charlsoncomorbidityindex <= 0.5
+death	discharge	
+0.0	1.0	
+charlsoncomorbidityindex > 0.5
+death	discharge	
+0.4837129218487165	0.5162870781512835	
+charlsoncomorbidityindex is missing
+death	discharge	
+0.46824829149426994	0.53175170850573	
+
+
+Weight: 0.13
+
+Decision Stump
+
+Classifications
+
+charlsoncomorbidityindex <= 0.5 : discharge
+charlsoncomorbidityindex > 0.5 : death
+charlsoncomorbidityindex is missing : discharge
+
+Class distributions
+
+charlsoncomorbidityindex <= 0.5
+death	discharge	
+0.0	1.0	
+charlsoncomorbidityindex > 0.5
+death	discharge	
+0.515496686338495	0.4845033136615051	
+charlsoncomorbidityindex is missing
+death	discharge	
+0.49999999999999967	0.5000000000000004	
+
+
+Weight: 0.12
+
+Decision Stump
+
+Classifications
+
+age <= 46.5 : discharge
+age > 46.5 : discharge
+age is missing : discharge
+
+Class distributions
+
+age <= 46.5
+death	discharge	
+0.0	1.0	
+age > 46.5
+death	discharge	
+0.4855995512269199	0.51440044877308	
+age is missing
+death	discharge	
+0.47164324202637237	0.5283567579736277	
+
+
+Weight: 0.11
+
+Number of performed Iterations: 10
+
+
+Time taken to build model: 0.04 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         631               76.5777 %
+Incorrectly Classified Instances       193               23.4223 %
+Kappa statistic                          0.5225
+Mean absolute error                      0.2854
+Root mean squared error                  0.3863
+Relative absolute error                 60.9476 %
+Root relative squared error             79.8522 %
+Total Number of Instances              824     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,805    0,258    0,651      0,805    0,720      0,531    0,837     0,656     death
+                 0,742    0,195    0,865      0,742    0,799      0,531    0,837     0,910     discharge
+Weighted Avg.    0,766    0,218    0,785      0,766    0,769      0,531    0,837     0,815     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 248  60 |   a = death
+ 133 383 |   b = discharge
+
