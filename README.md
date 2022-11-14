@@ -4,11 +4,11 @@ This repository contains the models and the results  produced for the paper "Bot
 THE REPOSITORY STRUCTURE IS THE FOLLOWING
 
 ```
-UNSUPERVISED/  ;;unsupervised models   in Weka format (.model)
+APPROACHES1/  ;;unsupervised models   in Weka format (.model)
    |
    ├─RESULTS/ ;; unsupervised models results
    |
-WHITEBOX/      ;;supervised white box models in Weka format (.model)
+APPROACHES2/      ;;supervised models in Weka format with directly interpretable explanation from domain experts (.model)
    |
    ├─RESULTS/
         |
@@ -16,7 +16,7 @@ WHITEBOX/      ;;supervised white box models in Weka format (.model)
         |
         ├─EXTERNAL_DATASET/          ;;models results with the external dataset from 3rd wave
         |
-BLACKBOX/     ;;supervised black box models   in Weka format (.model)
+APPROACHES3/     ;;supervised black box models or models with explanation not directly interpretable from domain experts  in Weka format (.model)
    |
    ├─RESULTS/
         |
@@ -36,4 +36,4 @@ Dataset1.arff and Dataset2.arff
 
 Dataset1.arff contains the anonimised data recorded at the admission time of all hospitalized patients between February 24, 2020 and December 31, 2020, and approximately refers to the first and the second pandemic waves. The purged dataset contains 824 records.
 
-Dataset2.arff refers to the first 100 cases observed during the third wave, in the course of the spreading of the  Delta variant (B.1.617.2), collected from February 15, 2021 to April 4, 2021. The purged dataset contains 77 records.
+Dataset2.arff refers to the first 100 cases observed during the third wave, in the course of the spreading of the  Delta variant (B.1.617.2), collected from February 15, 2021 to April 4, 2021. The purged dataset contains 71 records.
